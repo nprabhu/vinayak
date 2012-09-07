@@ -2,9 +2,6 @@ class User < ActiveRecord::Base
   has_one:profile
   has_many :galleries
   accepts_nested_attributes_for :profile
-  # Include default devise modules. Others available are:
-  # :token_authenticatable, :confirmable,
-  # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :token_authenticatable, :confirmable, :lockable, :timeoutable and :omniauthable

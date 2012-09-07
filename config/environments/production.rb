@@ -50,7 +50,7 @@ Vinayak::Application.configure do
 
   # Disable delivery errors, bad email addresses will be ignored
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default_url_options = { :host => 'http://powerful-tundra-2107.herokuapp.com/' }
+  config.action_mailer.default_url_options = { :host => 'http://vinayak.herokuapp.com/' }
   # Enable threaded mode
   # config.threadsafe!
 
