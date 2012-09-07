@@ -69,7 +69,7 @@ Vinayak::Application.configure do
       authentication: "plain",
       enable_starttls_auto: true,
       user_name: "njprabhu84@gmail.com",
-      password: "indian26!"
+      password: "indian26@"
   }
 
   # Log the query plan for queries taking more than this (works
