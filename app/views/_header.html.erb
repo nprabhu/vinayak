@@ -9,10 +9,16 @@
           <%= link_to "Vinayak", root_path  %></div>
            <div class="container nav-collapse">
             <ul class="nav pull-right">
-           <li><%= link_to "Home", root_path %></li>
-           <li><%= render 'devise/menu/registration_items' %></li>
-	       <li><%= render 'devise/menu/login_items' %></li>
+              <ul class="nav nav-tabs">
+
+               <li class="active" ><%= link_to "Home", root_path %></li>
+               <li><%= render 'devise/menu/registration_items' %></li>
+	           <li><%= render 'devise/menu/login_items' %></li>
+              </ul>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
       </div>
+
+
+
