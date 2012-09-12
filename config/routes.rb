@@ -5,6 +5,10 @@ Vinayak::Application.routes.draw do
 
   devise_for :users
 
+  match '/about',   to: 'home#about'
+  match '/contact', to: 'home#contact'
+
+
   #get "home/index"
 
   # The priority is based upon order of creation:

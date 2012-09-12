@@ -1,0 +1,61 @@
+	
+	<%= stylesheet_link_tag "styles","skitter.styles","highlight.black","sexy-bookmarks-style" %>
+        
+	<%= javascript_include_tag "jquery-1.6.3.min.js","jquery.animate-colors -min.js","jquery.skitter.min.js","highlight.js","sexy-bookmarks-public.js" %>
+       	
+	<script>
+	$(document).ready(function() {
+		
+		var options = {};
+	
+		if (document.location.search) {
+			var array = document.location.search.split('=');
+			var param = array[0].replace('?', '');
+			var value = array[1];
+			
+			if (param == 'animation') {
+				options.animation = value;
+			}
+			else if (param == 'type_navigation') {
+				if (value == 'dots_preview') {
+					$('.border_box').css({'marginBottom': '40px'});
+					options['dots'] = true;
+					options['preview'] = true;
+				}
+				else {
+					options[value] = true;
+					if (value == 'dots') $('.border_box').css({'marginBottom': '40px'});
+				}
+			}
+		}
+		
+		$('.box_skitter_large').skitter(options);
+		
+		// Highlight
+		$('pre.code').highlight({source:1, zebra:1, indent:'space', list:'ol'});
+		
+	});
+	</script>
+</head>
+<body>
+<div id="page">
+		
+	<div id="content">
+		<div class="border_box">
+			<div class="box_skitter box_skitter_large">
+				<ul>
+					
+					<li><a href="#cube"><img src="assets/001.jpg" class="cube" /></a><div class="label_text"><p>cube</p></div></li>
+					<li><a href="#cubeRandom"><img src="assets/002.jpg" class="cubeRandom" /></a><div class="label_text"><p>cubeRandom</p></div></li>
+					<li><a href="#block"><img src="assets/003.jpg" class="block" /></a><div class="label_text"><p>block</p></div></li>
+					<li><a href="#cubeStop"><img src="assets/004.jpg" class="cubeStop" /></a><div class="label_text"><p>cubeStop</p></div></li>
+					
+								
+				</ul>
+			</div>
+		</div>
+		
+		
+			
+</div>
+

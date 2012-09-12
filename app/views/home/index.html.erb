@@ -1,4 +1,96 @@
-<h1>Vinayak</h1>
-<p>Home</p>
-<p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-    and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+  <%= stylesheet_link_tag "global"%>
+  <%= javascript_include_tag "slides.min.jquery.js" %>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+  <script>
+      $(function(){
+          $('#slides').slides({
+              preload: true,
+              preloadImage: 'assets/loading.gif',
+              play: 5000,
+              pause: 2500,
+              hoverPause: true,
+              animationStart: function(current){
+                  $('.caption').animate({
+                      bottom:-35
+                  },100);
+                  if (window.console && console.log) {
+                      // example return of current slide number
+                      console.log('animationStart on slide: ', current);
+                  };
+              },
+              animationComplete: function(current){
+                  $('.caption').animate({
+                      bottom:0
+                  },200);
+                  if (window.console && console.log) {
+                      // example return of current slide number
+                      console.log('animationComplete on slide: ', current);
+                  };
+              },
+              slidesLoaded: function() {
+                  $('.caption').animate({
+                      bottom:0
+                  },200);
+              }
+          });
+      });
+  </script>
+</head>
+<body>
+<div id="container">
+  <div id="example">
+    <img src="assets/new-ribbon.png" width="112" height="112" alt="New Ribbon" id="ribbon">
+    <div id="slides">
+      <div class="slides_container">
+        <div class="slide">
+         <img src="assets/slide-1.jpg" width="570" height="270" alt="Slide 1">
+          <div class="caption" style="bottom:0">
+            <p>Happy Bokeh Thursday!</p>
+          </div>
+        </div>
+        <div class="slide">
+        <img src="assets/slide-2.jpg" width="570" height="270" alt="Slide 2">
+          <div class="caption">
+            <p>Taxi</p>
+          </div>
+        </div>
+        <div class="slide">
+         <img src="assets/slide-3.jpg" width="570" height="270" alt="Slide 3">
+          <div class="caption">
+            <p>Happy Bokeh raining Day</p>
+          </div>
+        </div>
+        <div class="slide">
+         <img src="assets/slide-4.jpg" width="570" height="270" alt="Slide 4">
+          <div class="caption">
+            <p>We Eat Light</p>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="assets/slide-5.jpg" width="570" height="270" alt="Slide 5">
+          <div class="caption">
+            <p>&ldquo;I must go down to the sea again, to the lonely sea and the sky...&rdquo;</p>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="assets/slide-6.jpg" width="570" height="270" alt="Slide 6">
+          <div class="caption">
+            <p>twelve.inch</p>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="assets/slide-7.jpg" width="570" height="270" alt="Slide 7">
+          <div class="caption">
+            <p>Save my love for loneliness</p>
+          </div>
+        </div>
+      </div>
+      <a href=" " class="prev"><img src="assets/arrow-prev.png" width="24" height="43" alt="Arrow Prev"></a>
+      <a href=" " class="next"><img src="assets/arrow-next.png" width="24" height="43" alt="Arrow Next"></a>
+    </div>
+  </div>
+  </div>
+ <h3> HomePage</h3>
+
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>

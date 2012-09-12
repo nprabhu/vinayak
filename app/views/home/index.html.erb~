@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<%= stylesheet_link_tag "global"%>
+        <%= javascript_include_tag "slides.min.jquery.js" %>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+	<script>
+		$(function(){
+			$('#slides').slides({
+				preload: true,
+				preloadImage: 'assets/loading.gif',
+				play: 5000,
+				pause: 2500,
+				hoverPause: true,
+				animationStart: function(current){
+					$('.caption').animate({
+						bottom:-35
+					},100);
+					if (window.console && console.log) {
+						// example return of current slide number
+						console.log('animationStart on slide: ', current);
+					};
+				},
+				animationComplete: function(current){
+					$('.caption').animate({
+						bottom:0
+					},200);
+					if (window.console && console.log) {
+						// example return of current slide number
+						console.log('animationComplete on slide: ', current);
+					};
+				},
+				slidesLoaded: function() {
+					$('.caption').animate({
+						bottom:0
+					},200);
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="container">
+		<div id="example">
+			<div id="slides">
+				<div class="slides_container">
+					<div class="slide">
+						<img src="assets/slide-1.jpg" width="940" height="270" alt="Slide 1"></a>
+						<div class="caption" style="bottom:0">
+							<p>Happy Bokeh Thursday!</p>
+						</div>
+					</div>
+					<div class="slide">
+						<img src="assets/slide-2.jpg" width="940" height="270" alt="Slide 2"></a>
+						<div class="caption">
+							<p>Taxi</p>
+						</div>
+					</div>
+					<div class="slide">
+						<img src="assets/slide-3.jpg" width="940" height="270" alt="Slide 3"></a>
+						<div class="caption">
+							<p>Happy Bokeh raining Day</p>
+						</div>
+					</div>
+					<div class="slide">
+						<img src="assets/slide-4.jpg" width="940" height="270" alt="Slide 4"></a>
+						<div class="caption">
+							<p>We Eat Light</p>
+						</div>
+					</div>
+					<div class="slide">
+						<img src="assets/slide-5.jpg" width="940" height="270" alt="Slide 5"></a>
+						<div class="caption">
+							<p>&ldquo;I must go down to the sea again, to the lonely sea and the sky...&rdquo;</p>
+						</div>
+					</div>
+					<div class="slide">
+						<img src="assets/slide-6.jpg" width="940" height="270" alt="Slide 6"></a>
+						<div class="caption">
+							<p>twelve.inch</p>
+						</div>
+					</div>
+					<div class="slide">
+						<img src="assets/slide-7.jpg" width="940" height="270" alt="Slide 7"></a>
+						<div class="caption">
+							<p>Save my love for loneliness</p>
+						</div>
+					</div>
+				</div>
+				<a href="#" class="prev"><img src="assets/arrow-prev.png" width="24" height="43" alt="Arrow Prev"></a>
+				<a href="#" class="next"><img src="assets/arrow-next.png" width="24" height="43" alt="Arrow Next"></a>
+			</div>
+                         <img src="assets/example-frame.png" width="940" height="341" alt="Example Frame" id="frame">
+		</div>
+		
+	</div>
+</body>
+</html>
